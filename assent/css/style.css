@@ -1,0 +1,47 @@
+/*Estilo da página index.html*/
+
+.center{
+    text-align: center;
+
+}
+
+.container{
+    display: flex;
+    flex-flow: row ;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu li {
+    display: inline;
+    margin: 20px;
+}
+
+#menu li a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+#menu li a:hover {
+    color: gray;
+}
+
+.p-30{
+    padding: 40px;
+}
+
+.br-50 {
+    border-radius: 50%;
+}
+
+.wh{
+    width: 500px;
+    height: 300px;
+}
+
+
+
+
+
+/*Estilo da página vontato.index*/
