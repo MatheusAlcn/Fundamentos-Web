@@ -1,49 +1,95 @@
 <!DOCTYPE html>
-<html lang="pt=br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato</title>
     <link rel="stylesheet" href="assent/css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
 
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 20px;
+        }
+
+        .form-container {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .map-container {
+            flex: 1;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .endereco {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
     <ul class="menu">
         <li>
-            <a href="index.html"> Home </a>
+            <a href="index.html">Home</a>
         </li>
         <li>
-            <a href="contato.html"> Contato </a>
+            <a href="contato.html">Contato</a>
         </li>
     </ul>
 
     <h1>Entre em contato</h1>
 
-    <form>
-        <label for="nome">Nome:</label> <br>
-        <input type="text" id="nome">
-        <br>
-        <br>
-        <label for="email">E-mail:</label> <br>
-        <input type="email" id="email">
-        <br>
-        <br>
-        <label for="assunto">Assunto:</label> <br>
-        <textarea name="assunto" id="assunto" cols="30" rows="5"></textarea>
+    <div class="container">
+        <div class="form-container">
+            <form>
+                <label for="nome">Nome:</label> <br>
+                <input type="text" id="nome" onkeyup="validaNome()">
+                <div id="txtNome"></div>
+                <br>
+                <label for="email">E-mail:</label> <br>
+                <input type="email" id="email" onkeyup="validaEmail()">
+                <div id="txtEmail"></div>
+                <br>
+                <label for="assunto">Assunto:</label> <br>
+                <textarea name="assunto" id="assunto" cols="30" rows="5" onkeyup="validaAssunto()"></textarea>
+                <div id="txtAssunto"></div>
+                <br>
+                <br>
+                <button onclick="enviar">Enviar</button>
+            </form>
 
-    </form>
+            <h2>Endereço</h2>
 
-    <h2>Endereço</h2>
+            <p class="endereco">Av. Paulista, 1520<br>São Paulo - SP</p>
+        </div>
 
-    <p>Av. paulista, 1520</p>
-    <p>Sâo Paulo - SP</p>
+        <div class="map-container">
+            <p class="endereco">Localização</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1828.5936364526667!2d-46.657148821354674!3d-23.56171662882887
+            !2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59ceb433f9f5%3A0xc14c71e6809cd1d1!2sAv.%20Paulista%2C%201520%20-%20Bela%
+            20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-200!5e0!3m2!1spt-BR!2sbr!4v1718806243241!5m2!1spt-BR!2sbr"
+             width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" 
+             referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
 
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1828.5936364526667!2d-
-    46.657148821354674!3d-23.56171662882887!2m3!1f0!2f0!3
-    f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59ceb433f9f5%3A0xc14c71e6809cd1d1!2sAv.%20Pa
-    ulista%2C%201520%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paul
-    o%20-%20SP%2C%2001310-200!5e0!3m2!1spt-BR!2sbr!4v1718806243241!5m2!1spt-BR!2sbr"
-     width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" 
-     referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <script src="assent/js/script.js"></script>
+
 </body>
 </html>
